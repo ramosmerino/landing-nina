@@ -1,3 +1,14 @@
+/* esconde scroll */
+body {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -14,6 +25,7 @@ body {
 .main-wrapper {
   height: 100vh;
   overflow-y: scroll;
+  scrollbar-width: none;
   scroll-snap-type: y mandatory;
 }
 
