@@ -17,9 +17,7 @@ body {
 }
 
 section {
-  height: 95vh;
   width: 100vw;
-  padding: 5vh 0;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -41,6 +39,10 @@ section {
   box-sizing: border-box;
   height: 100%;
   scroll-snap-align: start;
+}
+
+.videos lite-youtube {
+  width: 80vw;
 }
 
 .column iframe:hover {
@@ -65,7 +67,7 @@ section {
 }
 
 h1 {
-  font-size: 10rem;
+  font-size: 6rem;
   margin-top: -2rem;
   letter-spacing: 2rem;
   text-shadow: 3px 2px 2px rgba(251, 12, 251, 1), 0px -1px 3px rgba(12, 12, 251, .5), -3px 0px 2px rgba(52, 12, 200, 1);
@@ -81,13 +83,16 @@ h1 span {
   animation-delay: 3s;
 }
 
+header .logo {
+  display: none;
+}
+
 header {
   display: flex;
   align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
   width: 99%;
-  height: 5rem;
   font-size: 2.5rem;
   font-weight: bold;
 }
@@ -98,6 +103,7 @@ header em {
 
 header div {
   display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -141,9 +147,21 @@ footer {
 }
 
 @media (min-width: 768px) {
+  h1 {
+    font-size: 10rem;
+  }
   header {
     flex-direction: row;
     justify-content: space-between;
+  }
+  header div {
+    flex-direction: row;
+  }
+  header .logo {
+    display: block;
+  }
+  section header {
+    height: 5rem;
   }
 }
 
