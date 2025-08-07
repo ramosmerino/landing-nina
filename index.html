@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -19,6 +19,73 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:description" content="Nina Contreras, Montaje Audiovisual, Santiago de Chile" />
   <meta property="og:image" content="nina.jpg" />
+
+  <style>
+    section#videos .videos-wrap {
+      position: relative;
+      margin: 0 0.5rem;
+    }
+
+    /* Contenedor horizontal */
+    section#videos .columns.videos {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding: 1rem 0.5rem;
+    }
+
+    section#videos .columns.videos::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    section#videos .columns.videos::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+    }
+
+    section#videos .column {
+      flex: 0 0 auto;
+      width: 310px;
+    }
+
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      transition: background 150ms ease, transform 150ms ease, opacity 150ms ease;
+    }
+
+    .scroll-btn:hover { transform: translateY(-50%) scale(1.04); background: rgba(255,255,255,0.12); }
+
+    .scroll-btn svg { width: 20px; height: 20px; display:block; }
+
+    .scroll-btn.left { left: 8px; }
+    .scroll-btn.right { right: 8px; }
+
+    .scroll-btn[hidden] { display: none !important; }
+
+    @media (max-width: 520px) {
+      .scroll-btn { width: 36px; height: 36px; }
+      section#videos .column { width: 260px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -45,88 +112,100 @@
         </div>
       </footer>
     </section>
+
     <section id="videos">
       <header>
         <div>NINV</div>
         <div><em>VIDEOS</em></div>
       </header>
-      <div class="columns videos">
-        <div class="column">
-          <lite-youtube videoid="UXygAuwXdnM"
-            playlabel="COSMIKA - SIN ENEMIGOS VIDEOCLIP" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+
+      <div class="videos-wrap">
+        <button class="scroll-btn left" aria-label="Ver videos anteriores" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="white" />
+          </svg>
+        </button>
+
+        <div class="columns videos">
+          <div class="column">
+            <lite-youtube videoid="MttwbqZ2EeU"
+              playlabel="Reel Nicole Contreras - Actriz Profesional" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+          </div>
+          <div class="column">
+            <lite-youtube videoid="VYKeejaMrf0"
+              playlabel="Reel Brígida García - Actriz Profesional" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+          </div>
+          <div class="column">
+            <lite-youtube videoid="xIad3LrUC8U"
+              playlabel="&quot;El Atentado&quot; (Maqueta) - Postulación fondo Audiovisual" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+          </div>
+          <div class="column">
+            <lite-youtube videoid="IHg4sFW_0oQ"
+              playlabel="Tus Ojos Hermosos  - El Mono Melé (Video Clip)" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+          </div>
+          <div class="column">
+            <lite-youtube videoid="MjCz16SD0sI"
+              playlabel="Bienvenidos - M Elee (Video Clip)" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+          </div>
+          <div class="column">
+            <lite-youtube videoid="ipezRVS1CAc"
+              playlabel="Performance visual basada en el texto &quot;El mejor truco de magia jamás visto&quot; de Leyla Selman"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+          </div>
+          <div class="column">
+            <lite-youtube videoid="78iwDifd5Eg"
+              playlabel="Al Vacío - Colectiva La Descalza (Video Performance)" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+          </div>
+          <div class="column">
+            <lite-youtube videoid="GmSQwylY2kg"
+              playlabel="&quot;11 de Septiembre&quot; - Video Performance por Colectiva La Descalza y Colectivo La 301"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+          </div>
+          <div class="column">
+            <lite-youtube videoid="KJClLhLS7PA"
+              playlabel="Cortometraje - &quot;Ruinas&quot; (2022) 4K" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+          </div>
+          <div class="column">
+            <lite-youtube videoid="69Kyb_08Mtk"
+              playlabel="Teaser Cortometraje &quot;Carne y Cable&quot; - Aporía20" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+          </div>
+          <div class="column">
+            <lite-youtube videoid="CZQ38Nz8PHM"
+              playlabel="La Hora de la Alondra - Aporía 20" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
+          </div>
         </div>
-        <div class="column">
-          <lite-youtube videoid="MttwbqZ2EeU"
-            playlabel="Reel Nicole Contreras - Actriz Profesional" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
-        </div>
-        <div class="column">
-          <lite-youtube videoid="VYKeejaMrf0"
-            playlabel="Reel Brígida García - Actriz Profesional" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
-        </div>
-        <div class="column">
-          <lite-youtube videoid="xIad3LrUC8U"
-            playlabel="&quot;El Atentado&quot; (Maqueta) - Postulación fondo Audiovisual" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
-        </div>
-        <div class="column">
-          <lite-youtube videoid="IHg4sFW_0oQ"
-            playlabel="Tus Ojos Hermosos  - El Mono Melé (Video Clip)" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
-        </div>
-        <div class="column">
-          <lite-youtube videoid="MjCz16SD0sI"
-            playlabel="Bienvenidos - M Elee (Video Clip)" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
-        </div>
-        <div class="column">
-          <lite-youtube videoid="ipezRVS1CAc"
-            playlabel="Performance visual basada en el texto &quot;El mejor truco de magia jamás visto&quot; de Leyla Selman"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
-        </div>
-        <div class="column">
-          <lite-youtube videoid="78iwDifd5Eg"
-            playlabel="Al Vacío - Colectiva La Descalza (Video Performance)" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
-        </div>
-        <div class="column">
-          <lite-youtube videoid="GmSQwylY2kg"
-            playlabel="&quot;11 de Septiembre&quot; - Video Performance por Colectiva La Descalza y Colectivo La 301"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
-        </div>
-        <div class="column">
-          <lite-youtube videoid="KJClLhLS7PA"
-            playlabel="Cortometraje - &quot;Ruinas&quot; (2022) 4K" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
-        </div>
-        <div class="column">
-          <lite-youtube videoid="69Kyb_08Mtk"
-            playlabel="Teaser Cortometraje &quot;Carne y Cable&quot; - Aporía20" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
-        </div>
-        <div class="column">
-          <lite-youtube videoid="CZQ38Nz8PHM"
-            playlabel="La Hora de la Alondra - Aporía 20" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></lite-youtube>
-        </div>
+
+        <button class="scroll-btn right" aria-label="Ver videos siguientes" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" fill="white" />
+          </svg>
+        </button>
       </div>
+
     </section>
+
     <section id="reels">
       <header>
         <div>NINV</div>
@@ -191,26 +270,64 @@
         </div>
       </div>
     </section>
+
   </div>
-</body>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const videoColumns = document.querySelector('.columns.videos');
 
-  window.addEventListener('wheel', function (e) {
-    const rect = videoColumns.getBoundingClientRect();
-    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+  <script src="lite-yt-embed.js"></script>
 
-    if (inView) {
-      const atStart = videoColumns.scrollLeft <= 0;
-      const atEnd = videoColumns.scrollLeft + videoColumns.clientWidth >= videoColumns.scrollWidth - 1;
-      if ((!atStart && e.deltaY < 0) || (!atEnd && e.deltaY > 0) || (e.deltaX !== 0)) {
-        e.preventDefault();
-        videoColumns.scrollLeft += e.deltaY !== 0 ? e.deltaY : e.deltaX;
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const columns = document.querySelector('.columns.videos');
+      if (!columns) return;
+
+      const leftBtn = document.querySelector('.scroll-btn.left');
+      const rightBtn = document.querySelector('.scroll-btn.right');
+
+      function updateButtons() {
+        const canLeft = columns.scrollLeft > 1;
+        const canRight = columns.scrollLeft + columns.clientWidth < columns.scrollWidth - 1;
+        leftBtn.hidden = !canLeft;
+        rightBtn.hidden = !canRight;
       }
-    }
-  }, { passive: false });
-});
-</script>
-<script src="lite-yt-embed.js"></script>
+
+      function pageScrollAmount() {
+        return Math.max(Math.round(columns.clientWidth * 0.8), 160);
+      }
+
+      rightBtn.addEventListener('click', function () {
+        columns.scrollBy({ left: pageScrollAmount(), behavior: 'smooth' });
+      });
+
+      leftBtn.addEventListener('click', function () {
+        columns.scrollBy({ left: -pageScrollAmount(), behavior: 'smooth' });
+      });
+
+      columns.addEventListener('scroll', throttle(updateButtons, 50));
+      window.addEventListener('resize', throttle(updateButtons, 100));
+      updateButtons();
+
+      function throttle(fn, wait) {
+        let t = null;
+        return function (...args) {
+          if (t) return;
+          t = setTimeout(() => { t = null; }, wait);
+          fn.apply(this, args);
+        };
+      }
+
+      columns.setAttribute('tabindex', '0');
+      columns.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          columns.scrollBy({ left: 160, behavior: 'smooth' });
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          columns.scrollBy({ left: -160, behavior: 'smooth' });
+        }
+      });
+
+    });
+  </script>
+</body>
+
 </html>
