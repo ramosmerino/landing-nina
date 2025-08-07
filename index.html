@@ -197,14 +197,20 @@
 document.addEventListener('DOMContentLoaded', function () {
   const videoColumns = document.querySelector('.columns.videos');
 
-  videoColumns.addEventListener('wheel', function (e) {
-    if (videoColumns.scrollWidth > videoColumns.clientWidth) {
-      e.preventDefault();
-      videoColumns.scrollLeft += e.deltaY !== 0 ? e.deltaY : e.deltaX;
+  window.addEventListener('wheel', function (e) {
+    const rect = videoColumns.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (inView) {
+      const atStart = videoColumns.scrollLeft <= 0;
+      const atEnd = videoColumns.scrollLeft + videoColumns.clientWidth >= videoColumns.scrollWidth - 1;
+      if ((!atStart && e.deltaY < 0) || (!atEnd && e.deltaY > 0) || (e.deltaX !== 0)) {
+        e.preventDefault();
+        videoColumns.scrollLeft += e.deltaY !== 0 ? e.deltaY : e.deltaX;
+      }
     }
   }, { passive: false });
 });
 </script>
-
 <script src="lite-yt-embed.js"></script>
 </html>
