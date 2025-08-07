@@ -193,5 +193,18 @@
     </section>
   </div>
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const videoColumns = document.querySelector('.columns.videos');
+
+  videoColumns.addEventListener('wheel', function (e) {
+    if (videoColumns.scrollWidth > videoColumns.clientWidth) {
+      e.preventDefault();
+      videoColumns.scrollLeft += e.deltaY !== 0 ? e.deltaY : e.deltaX;
+    }
+  }, { passive: false });
+});
+</script>
+
 <script src="lite-yt-embed.js"></script>
 </html>
